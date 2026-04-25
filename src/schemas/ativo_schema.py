@@ -5,3 +5,6 @@ class AtivoItem(BaseModel):
     tipo: str
     codigo: str
     valor_unitario: float
+
+    class Config:
+        orm_mode = True
