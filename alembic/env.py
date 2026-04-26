@@ -28,7 +28,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from src.databaseConfig import Base
+from src.database.databaseConfig import Base
 from src.models.ativo import Ativo
 from src.models.aporte import Aporte
 target_metadata = Base.metadata

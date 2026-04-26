@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Float, String
 from sqlalchemy.orm import relationship
-from src.databaseConfig import Base
+from src.database.databaseConfig import Base
 
 class Ativo(Base):
     __tablename__ = "ativo"

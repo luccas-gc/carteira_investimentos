@@ -4,7 +4,7 @@ class AtivoItem(BaseModel):
     nome: str
     tipo: str
     codigo: str
-    valor_unitario: float
+    valor_unitario: float #preço p/unidade
 
     class Config:
         orm_mode = True
