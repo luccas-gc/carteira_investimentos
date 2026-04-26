@@ -18,6 +18,21 @@ async def service_pegar_ativo(id: int):
 async def service_adicionar_ativo(ativo: AtivoItem):
     novo_ativo = Ativo(nome=ativo.nome, tipo=ativo.tipo, codigo=ativo.codigo, valor_unitario=ativo.valor_unitario)
     async with SessionLocal() as session:
-        session.add(novo_ativo)
-        await session.commit()
-        return {"message": "ativo adicionado"}
+        ativo = session.execute(select(Ativo).where(Ativo.codigo==novo_ativo.codigo))
+        if not ativo:
+            session.add(novo_ativo)
+            await session.commit()
+            return {"message": "ativo adicionado"}
+        else:
+            return {"message": "ativo já existente"}
+    
+async def service_remover_ativo(id: int):
+    async with SessionLocal() as session:
+        busca_ativo = await session.execute(select(Ativo).where(Ativo.id==id))
+        remover_ativo = busca_ativo.scalars().first()
+        if remover_ativo:
+            await session.delete(remover_ativo)
+            await session.commit()
+            return {"message": "ativo removido"}
+        else:
+            return {"message": "ativo inexistente"}
