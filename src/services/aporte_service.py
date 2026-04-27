@@ -7,8 +7,8 @@ from src.services.ativo_service import service_pegar_ativo
 async def service_todos_aportes():
     async with SessionLocal() as session:
         resultado = await session.execute(select(Aporte))
-        aportes = resultado.scalars().all()
-        return aportes
+        aporte = resultado.scalars().all()
+        return aporte
     
 async def service_pegar_aporte(id_ativo: int):
     async with SessionLocal() as session:

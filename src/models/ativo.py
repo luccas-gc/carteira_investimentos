@@ -10,5 +10,6 @@ class Ativo(Base):
     tipo = Column("tipo", String)
     codigo = Column("codigo", String)
     valor_unitario = Column("valor_unitario", Float)
+    quantidade = Column("quantidade", Integer)
     aporte = relationship("Aporte", back_populates="ativo")
 

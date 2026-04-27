@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from src.schemas.ativo_schema import AtivoItem
-from src.services.ativo_service import service_remover_ativo, service_pegar_ativo, service_todos_ativos, service_adicionar_ativo
+from src.services.ativo_service import service_pegar_ativo, service_todos_ativos, service_adicionar_ativo
 
 ativo_router = APIRouter(prefix="/ativo", tags=["ativo"])
 
@@ -15,7 +15,8 @@ async def get_ativo_id(id: int):
 @ativo_router.post('/')
 async def post_ativo(ativo: AtivoItem):
     return await service_adicionar_ativo(ativo=ativo)
-
+'''
 @ativo_router.delete('/{id}')
 async def delete_ativo(id: int):
     return await service_remover_ativo(id)
+'''
