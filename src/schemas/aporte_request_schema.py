@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
-class AporteItem(BaseModel):
-    id_ativo: int
+class AporteRequest(BaseModel):
+    codigo: str
     quantidade: int
 
     class Config:

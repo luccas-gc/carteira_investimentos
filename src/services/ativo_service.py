@@ -3,18 +3,21 @@ from sqlalchemy.future import select
 from src.models.ativo import Ativo
 from src.schemas.ativo_schema import AtivoItem
 
+# Retorna Todos os Ativos
 async def service_todos_ativos():
     async with SessionLocal() as session:
         resultado = await session.execute(select(Ativo))
         ativo = resultado.scalars().all()
         return ativo
     
-async def service_pegar_ativo(id: int):
+# Retorna Ativo por Código
+async def service_pegar_ativo(codigo: str):
     async with SessionLocal() as session:
-        resultado = await session.execute(select(Ativo).where(Ativo.id==id))
+        resultado = await session.execute(select(Ativo).where(Ativo.codigo==codigo))
         ativo = resultado.scalars().first()
         return ativo
     
+# Adiciona Ativo
 async def service_adicionar_ativo(ativo: AtivoItem):
     novo_ativo = Ativo(nome=ativo.nome, tipo=ativo.tipo, codigo=ativo.codigo, valor_unitario=ativo.valor_unitario, quantidade=ativo.quantidade)
     async with SessionLocal() as session:
