@@ -25,12 +25,13 @@ async def service_pegar_aporte(codigo: str):
         
 # Adiciona Aporte em um ativo
 async def service_adicionar_aporte(aporte: AporteRequest):
-    ativo = await service_pegar_ativo(aporte.codigo)
-    if ativo:
-        novo_aporte = Aporte(id_ativo = ativo.id, quantidade=aporte.quantidade)
-        async with SessionLocal() as session:
+    async with SessionLocal() as session:
+        ativo = await service_pegar_ativo(aporte.codigo, session)
+        if ativo:
+            novo_aporte = Aporte(id_ativo = ativo.id, quantidade=aporte.quantidade)
             session.add(novo_aporte)
+            ativo.quantidade += aporte.quantidade
             await session.commit()
-            return {"codigo": {ativo.codigo}}
-    else:
-        return {"message": "ativo inexistente"}
+            return {"codigo": ativo.codigo}
+        else:
+            return {"message": "ativo inexistente"}

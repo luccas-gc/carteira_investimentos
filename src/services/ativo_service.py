@@ -11,11 +11,9 @@ async def service_todos_ativos():
         return ativo
     
 # Retorna Ativo por Código
-async def service_pegar_ativo(codigo: str):
-    async with SessionLocal() as session:
-        resultado = await session.execute(select(Ativo).where(Ativo.codigo==codigo))
-        ativo = resultado.scalars().first()
-        return ativo
+async def service_pegar_ativo(codigo: str, session):
+    resultado = await session.execute(select(Ativo).where(Ativo.codigo==codigo))
+    return resultado.scalars().first() 
     
 # Adiciona Ativo
 async def service_adicionar_ativo(ativo: AtivoItem):
@@ -29,6 +27,7 @@ async def service_adicionar_ativo(ativo: AtivoItem):
             return {"message": "ativo adicionado"}
         else:
             return {"message": "ativo já existente"}
+        
 '''
 async def service_remover_ativo(id: int):
     async with SessionLocal() as session:

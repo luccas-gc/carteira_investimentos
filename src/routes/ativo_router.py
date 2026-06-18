@@ -8,13 +8,15 @@ ativo_router = APIRouter(prefix="/ativo", tags=["ativo"])
 async def get_ativos():
     return await service_todos_ativos()
 
-@ativo_router.get('/{id}', response_model=AtivoItem)
-async def get_ativo_id(id: int):
-    return await service_pegar_ativo(id)
+@ativo_router.get('/{codigo}', response_model=AtivoItem)
+async def get_ativo_id(codigo: str):
+    print(f"Código recebido: {codigo}")
+    return await service_pegar_ativo(codigo)
 
 @ativo_router.post('/')
 async def post_ativo(ativo: AtivoItem):
     return await service_adicionar_ativo(ativo=ativo)
+
 '''
 @ativo_router.delete('/{id}')
 async def delete_ativo(id: int):
