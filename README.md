@@ -102,6 +102,7 @@ Com esse projeto, foi possível adquirir conhecimentos em:
 ## Possíveis Melhorias Futuras
 
 * **Autenticação de usuários**
+* Agente de IA para feedback da carteira
 * **Integração com banco PostgreSQL no lugar de SQLite**
 * **Atualização de preços reais dos ativos**
 * **Cálculo de patrimônio da carteira**
