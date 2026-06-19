@@ -21,9 +21,9 @@ O projeto foi criado com o objetivo de praticar conceitos de desenvolvimento bac
 * GET: /ativo/{codigo} -> **Consultar um ativo pelo código**
 
 ### Aportes
-* POST: /aporte/criar_aporte -> **Registrar aportes em ativos existentes e atualiza automaticamente a quantidade daquele ativo**
-* GET: /aporte/ -> **Consultar todo o histórico de aportes**
-* GET: /aporte/{codigo} -> **Consultar o histórico de aportes de um ativo específico**
+* **POST: /aporte/criar_aporte** -> Registrar aportes em ativos existentes e atualiza automaticamente a quantidade daquele ativo
+* **GET: /aporte/** -> Consultar todo o histórico de aportes
+* **GET: /aporte/{codigo}** -> Consultar o histórico de aportes de um ativo específico
 
 ### Exemplo de Ativo JSON
 ```bash
@@ -100,7 +100,7 @@ Com esse projeto, foi possível adquirir conhecimentos em:
 
 ## Possíveis Melhorias Futuras
 
-* Autenticação de usuários
-* Integração com banco PostgreSQL no lugar de SQLite
-* Atualização de preços reais dos ativos
-* Cálculo de patrimônio da carteira
+**Autenticação de usuários**
+**Integração com banco PostgreSQL no lugar de SQLite**
+**Atualização de preços reais dos ativos**
+**Cálculo de patrimônio da carteira**
