@@ -51,6 +51,8 @@ src/
 │   ├── ativo_service.py
 │   └── aporte_service.py
 └── routes/
+    ├── ativo_router.py
+    └── aporte_router.py
 ```
 
 ## Executando o Projeto
