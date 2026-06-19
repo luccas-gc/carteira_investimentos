@@ -2,13 +2,13 @@
 
 API desenvolvida em Python para gerenciar uma carteira de investimentos, permitindo o cadastro de ativos e o registro de aportes.
 
-O projeto foi criado com o objetivo de praticar conceitos de desenvolvimento backend utilizando Python, FastAPI, SQLAlchemy Assíncrono e modelagem de banco de dados.
+O projeto foi criado com o objetivo de praticar conceitos de desenvolvimento backend utilizando Python, FastAPI, SQLAlchemy e modelagem de banco de dados.
 
 ## Tecnologias Utilizadas
 
 * Python 3
 * FastAPI
-* SQLAlchemy Async
+* SQLAlchemy
 * Pydantic
 * SQLite (atualmente)
 * Uvicorn
