@@ -100,7 +100,7 @@ Com esse projeto, foi possível adquirir conhecimentos em:
 
 ## Possíveis Melhorias Futuras
 
-**Autenticação de usuários**
-**Integração com banco PostgreSQL no lugar de SQLite**
-**Atualização de preços reais dos ativos**
-**Cálculo de patrimônio da carteira**
+* **Autenticação de usuários**
+* **Integração com banco PostgreSQL no lugar de SQLite**
+* **Atualização de preços reais dos ativos**
+* **Cálculo de patrimônio da carteira**
