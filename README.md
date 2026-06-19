@@ -96,7 +96,6 @@ Com esse projeto, foi possível adquirir conhecimentos em:
 * Desenvolvimento de APIs REST
 * Programação assíncrona em Python
 * SQLAlchemy ORM
-* Relacionamentos entre tabelas
 * Organização de projetos backend
 * Boas práticas de arquitetura em APIs
 
