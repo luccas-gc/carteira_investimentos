@@ -16,9 +16,9 @@ O projeto foi criado com o objetivo de praticar conceitos de desenvolvimento bac
 ## Funcionalidades e Rotas
 ### Ativos
 
-* POST: /ativo -> **Cadastrar um novo ativo**
-* GET: /ativo -> **Consultar todos os ativos cadastrados**
-* GET: /ativo/{codigo} -> **Consultar um ativo pelo código**
+* **POST: /ativo** -> Cadastrar um novo ativo
+* **GET: /ativo** -> Consultar todos os ativos cadastrados
+* **GET: /ativo/{codigo}** -> Consultar um ativo pelo código
 
 ### Aportes
 * **POST: /aporte/criar_aporte** -> Registrar aportes em ativos existentes e atualiza automaticamente a quantidade daquele ativo
